@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 263 70% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 245 100% 69%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 187 94% 43%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --border-soft: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 263 70% 58%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 16% 47%;
+    --sidebar-primary: 263 70% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 263 70% 96%;
+    --sidebar-accent-foreground: 263 70% 58%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 263 70% 58%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(263 70% 58%), hsl(271 81% 56%));
+    --gradient-accent: linear-gradient(135deg, hsl(187 94% 43%), hsl(217 91% 60%));
+    --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
+    --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.06);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .ef-card {
+    @apply bg-card rounded-2xl border border-border p-6;
+    box-shadow: var(--shadow-card);
+  }
+
+  .ef-card-hover {
+    @apply ef-card transition-all duration-200;
+  }
+
+  .ef-card-hover:hover {
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-4px);
+  }
+
+  .ef-btn-primary {
+    @apply text-primary-foreground px-6 py-3 rounded-xl shadow-md transition-all duration-200 font-medium;
+    background: var(--gradient-primary);
+  }
+
+  .ef-btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px hsla(263, 70%, 58%, 0.35);
+  }
+
+  .ef-btn-secondary {
+    @apply border border-border bg-card text-foreground rounded-xl px-5 py-2 font-medium transition-all duration-200;
+  }
+
+  .ef-btn-secondary:hover {
+    @apply bg-muted;
+  }
+
+  .ef-input {
+    @apply w-full border border-border rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/40 focus:outline-none transition-all bg-card;
+  }
+
+  .ef-label {
+    @apply text-sm text-muted-foreground font-medium mb-1 block;
+  }
+
+  .ef-gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .ef-stat-icon {
+    @apply p-3 rounded-lg;
+  }
+
+  .ef-progress-bar {
+    @apply h-3 bg-muted rounded-full overflow-hidden;
+  }
+
+  .ef-progress-fill {
+    @apply h-full rounded-full;
+    background: var(--gradient-primary);
+  }
+}

@@ -1,0 +1,117 @@
+/**
+ * PublicFormLayout Styles
+ * Google Forms-inspired standalone form layout
+ * Mobile-first, responsive design
+ */
+
+.public-form-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Header */
+.public-form-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.public-form-header-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.public-form-logo {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.public-form-subtitle {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Main content */
+.public-form-main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 16px;
+  overflow-y: auto;
+}
+
+.public-form-wrapper {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Footer */
+.public-form-footer {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 20px 16px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.public-form-footer a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.public-form-footer a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* Tablet and above */
+@media (min-width: 768px) {
+  .public-form-header {
+    padding: 40px 32px;
+  }
+
+  .public-form-logo {
+    font-size: 32px;
+  }
+
+  .public-form-main {
+    padding: 48px 32px;
+  }
+
+  .public-form-wrapper {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Loading state */
+.public-form-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #666;
+}
+
+.public-form-error {
+  padding: 24px;
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 8px;
+  color: #c33;
+  text-align: center;
+}
